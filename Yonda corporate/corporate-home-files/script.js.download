@@ -1,0 +1,24 @@
+const tabOpenModal = $(".tabopen__modal");
+const tabContent = $(".tabopen__wrapper");
+const tabDropWrapper = $(".tabdrop__wrapper");
+
+tabDropWrapper.on("click", function () {
+  if ($(this).find(tabOpenModal).hasClass("w--open")) {
+    $(".sectorscollection__item").css({
+      marginBottom: "0px"
+    });
+  } else if (tabOpenModal.hasClass("w--open")) {
+    $(".sectorscollection__item").css({
+      marginBottom: "0px"
+    });
+    const thisModalContent = $(this).find(tabContent).outerHeight();
+    $(this).closest(".sectorscollection__item").css({
+      marginBottom: thisModalContent
+    });
+  } else {
+    const thisModalContent = $(this).find(tabContent).outerHeight();
+    $(this).closest(".sectorscollection__item").css({
+      marginBottom: thisModalContent
+    });
+  }
+});
